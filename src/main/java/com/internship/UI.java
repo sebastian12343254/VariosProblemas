@@ -17,8 +17,9 @@ public class UI extends JFrame {
         setLocationRelativeTo(null);
         setLayout(new GridLayout(2, 2));
 
-        // Estilo del JFrame
+
         JPanel panelSumaDeDigitos = new JPanel(new BorderLayout());
+        panelSumaDeDigitos.setBorder(BorderFactory.createLineBorder(Color.BLACK, 2)); 
         JLabel LabelSumaDeDigitos = new JLabel("Suma de Dígitos");
         estilizarLabel(LabelSumaDeDigitos, Color.BLACK, 25, true);
         panelSumaDeDigitos.setPreferredSize(new Dimension(100, 100));
@@ -31,7 +32,7 @@ public class UI extends JFrame {
             @Override
             public void mouseClicked(MouseEvent e) {
                 JFrame sumaDeDigitos = new JFrame("Suma de digitos");
-                sumaDeDigitos.setDefaultCloseOperation(sumaDeDigitos.EXIT_ON_CLOSE);
+                sumaDeDigitos.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
                 sumaDeDigitos.setSize(700, 700);
                 sumaDeDigitos.setLocationRelativeTo(null);
                 sumaDeDigitos.setVisible(true);
@@ -62,7 +63,6 @@ public class UI extends JFrame {
                 panelSumaDeDigitos.add(lblResultado);
 
                 sumaDeDigitos.add(panelSumaDeDigitos);
-                dispose();
 
                 btnCalcular.addActionListener(evt -> {
                     try {
@@ -91,6 +91,7 @@ public class UI extends JFrame {
         });
 
         JPanel panelPalindromo = new JPanel(new BorderLayout());
+        panelPalindromo.setBorder(BorderFactory.createLineBorder(Color.BLACK, 2)); 
         JLabel labelPalindromo = new JLabel("Palindromo");
         estilizarLabel(labelPalindromo, Color.BLACK, 25, true);
         panelPalindromo.setPreferredSize(new Dimension(100, 100));
@@ -102,7 +103,7 @@ public class UI extends JFrame {
             @Override
             public void mouseClicked(MouseEvent e) {
                 JFrame palindromo = new JFrame("Palíndromo");
-                palindromo.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+                palindromo.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
                 palindromo.setSize(700, 700);
                 palindromo.setLocationRelativeTo(null);
 
@@ -139,13 +140,11 @@ public class UI extends JFrame {
 
                 palindromo.add(panelPalindromo);
                 palindromo.setVisible(true);
-
-                dispose();
-
             }
         });
 
         JPanel panelOrdenamiento = new JPanel(new BorderLayout());
+        panelOrdenamiento.setBorder(BorderFactory.createLineBorder(Color.BLACK, 2));
         JLabel labelOrdenamiento = new JLabel("Ordenamiento");
         estilizarLabel(labelOrdenamiento, Color.BLACK, 25, true);
         panelOrdenamiento.setPreferredSize(new Dimension(100, 100));
@@ -157,6 +156,7 @@ public class UI extends JFrame {
             @Override
             public void mouseClicked(MouseEvent e) {
                 JFrame ordenamiento = new JFrame("Ordenamiento");
+                ordenamiento.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
                 ordenamiento.setSize(700, 700);
                 ordenamiento.setLocationRelativeTo(null);
 
@@ -191,7 +191,7 @@ public class UI extends JFrame {
                         }
 
                         int[] resultado = problemas.ordenamiento(digitos);
-                        String resultadoS = Arrays.toString(resultado); 
+                        String resultadoS = Arrays.toString(resultado);
                         resultadoLabel.setText("Resultado: " + resultadoS);
 
                     } catch (NumberFormatException ex) {
@@ -209,12 +209,11 @@ public class UI extends JFrame {
 
                 ordenamiento.add(panelOrdenamientoInterno);
                 ordenamiento.setVisible(true);
-
-                dispose();
             }
         });
 
         JPanel panelProx = new JPanel(new BorderLayout());
+        panelProx.setBorder(BorderFactory.createLineBorder(Color.BLACK, 2));
         JLabel labelProx = new JLabel("Próximamente");
         estilizarLabel(labelProx, Color.BLACK, 25, true);
         panelProx.setPreferredSize(new Dimension(100, 100));
