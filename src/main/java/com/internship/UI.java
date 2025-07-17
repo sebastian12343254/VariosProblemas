@@ -127,7 +127,7 @@ public class UI extends JFrame {
                 btnVerificar.addActionListener(event -> {
                     String texto = txtPalin.getText();
                     boolean resultado = problemas.palindromo(texto);
-                    resultadoLabel.setText("¿Es palíndromo? " + resultado);
+                    resultadoLabel.setText("resultado: " + resultado);
                 });
 
                 panelPalindromo.add(lblTitulo);
